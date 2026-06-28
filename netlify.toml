@@ -2,5 +2,11 @@
   publish = "."
   functions = "netlify/functions"
 
-# Functions use the modern API with config.path = "/api/data",
-# so no manual redirects are required.
+# Map the friendly /api/data path to the function's default URL.
+# Using a redirect (instead of config.path routing) is the most
+# compatible setup and works with both Git and manual deploys.
+[[redirects]]
+  from = "/api/data"
+  to = "/.netlify/functions/data"
+  status = 200
+  force = true

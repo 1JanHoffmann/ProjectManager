@@ -1,0 +1,6 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+# Functions use the modern API with config.path = "/api/data",
+# so no manual redirects are required.
